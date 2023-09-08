@@ -1,0 +1,16 @@
+<section class="color-white background-black">
+    <header class="container container-gutter padding-vertical-xxl">
+        <h1 class="display-title display-title-xxl margin-top-s">{{- .Site.Title }}</h1>
+        {{ with $.Site.Params.description }}
+
+        <p class="lead lead-s margin-vertical-xs max-width-s">
+            {{ . }}
+        </p>
+        {{ end }}
+        {{ with .Content }}
+        <div class="lead lead-s max-width-s font-family-serif">
+            {{ . }}
+        </div>
+        {{ end }}
+    </header>
+</section>

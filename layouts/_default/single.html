@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+{{ $wordCount := countwords .Content }}
+{{ $readingTime := div $wordCount 225 | math.Ceil }}
+
+<section class="container padding-vertical-xxl">
+  <h1 class="display-title-xxl margin-bottom-xxs">{{- .Title }}</h1>
+  <p class="font-size-s no-margin-top color-grey"><strong>{{ .Date.Format "02 Jan 2006"}}</strong>
+    <span class="font-size-xxs margin-horizontal-xxs">&#9679;</span>
+    <strong>
+      {{ if lt $readingTime 2 }}
+        1 min read
+      {{ else }}
+        {{ $readingTime }} min read
+      {{ end }}
+    </strong>
+  </p>
+  <ul class="boxes flex flex-row margin-top-xxs">
+  {{ range (.GetTerms "tags") }}
+    <li class="button button-xs button-tertiary no-margin-vertical margin-left-xxs">
+      <a href="{{ .Permalink }}" class="text-decoration-none">{{ .LinkTitle }}</a>
+    </li>
+  {{ end }}
+  </ul>
+  <hr class="margin-bottom-l margin-top-xs">
+  <div>
+    {{ .Content }}
+  </div>
+</section>
+{{ end }}

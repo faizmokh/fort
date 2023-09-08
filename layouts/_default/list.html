@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section class="color-white background-black">
+  <header class="container container-gutter padding-vertical-xxl">
+      <h1 class="display-title display-title-xxl margin-top-s">
+          {{- .Title }}
+      </h1>
+      {{ with .Description }}
+      <div class="lead lead-s max-width-s font-family-serif">
+          {{ . }}
+      </div>
+      {{ end }}
+  </header>
+</section>
+<main class="container margin-vertical-l">
+  {{- range .Pages }}
+    <h2 class="display-title-xs">
+      <a href="{{ .Permalink }}">
+        {{- .Title }}
+      </a>
+    </h2>
+    <p class="font-size-s no-margin-top color-grey">{{ .Date.Format "02 Jan 2006" }}</p>
+  {{- end }}
+</main>
+{{ end }}

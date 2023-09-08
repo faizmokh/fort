@@ -1,0 +1,21 @@
+:root {
+    font-size: 18px;
+}
+
+.container {
+    max-width: 54rem;
+}
+
+.divider {
+    margin: 1em 0 1.25em;
+    max-width: 10rem;
+}
+
+.nav-inline > ul > li:first-child {
+    margin-left: 0;
+}
+
+.boxes > li:first-child {
+    margin-left: 0;
+    list-style: none;
+}

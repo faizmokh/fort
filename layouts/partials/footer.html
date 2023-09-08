@@ -1,0 +1,18 @@
+<footer class="footer padding-vertical-xl border-top">
+    <div class="container">
+        <nav class="nav-inline no-margin-vertical">
+            <ul>
+            {{ range .Site.Menus.main }}
+                <li>
+                    <a href="{{ .URL }}" title="{{ .Title }}" class="">{{ .Name }}</a>
+                </li>
+            {{ end }}
+            </ul>
+        </nav>
+        <p>
+        Designed and built by <strong>@faizmokh</strong><br>
+        Code licensed under <strong>MIT</strong>
+        </p>
+
+    </div>
+</footer>
